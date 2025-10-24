@@ -1,0 +1,51 @@
+{
+    "name": "sinhar/module-ai-agentic-integration",
+    "type": "magento2-module",
+    "description": "Contains AI-Agentic-based integrations towards ACP Services",
+    "license": "proprietary",
+    "version": "dev-main",
+    "require": {
+        "php": ">=8.1.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "magento/magento-composer-installer": true,
+            "magento/composer-dependency-version-audit-plugin": false,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "laminas/laminas-dependency-plugin": false,
+            "sinhar/*": true
+        }
+    },
+    "autoload": {
+        "files": [
+            "src/registration.php"
+        ],
+        "psr-4": {
+            "SinhaR\\AiAgenticIntegration\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SinhaR\\AiAgenticIntegration\\Test\\": "test"
+        }
+    },
+    "extra": {
+        "module-category": "integration",
+        "magento-force": true,
+        "changelog": {
+            "source": "changelog.json",
+            "output": {
+                "sphinx": "docs/changelog.rst"
+            }
+        },
+        "patches-search": "patches"
+    },
+    "repositories": {
+        "private-packagist": {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    }
+}

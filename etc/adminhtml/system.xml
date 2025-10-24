@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+  Copyright © 2025 Ritu Sinha
+
+  This source code is licensed under the MIT license
+  that is bundled with this package in the file LICENSE.
+
+  You are free to use, modify, and distribute this software
+  in accordance with the terms of the MIT License.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="sinhar_aiagentic_integration" translate="label" sortOrder="100">
+            <label>AI Agent</label>
+        </tab>
+        <section id="sinhar_aiagent" translate="label" sortOrder="900" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Integration</label>
+            <tab>sinhar_aiagentic_integration</tab>
+            <resource>SinhaR_AiAgenticIntegration::config</resource>
+            <group id="acp_settings" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>ACP Integration</label>
+                <field id="acp_endpoint" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>ACP Endpoint URL</label>
+                </field>
+                <field id="ai_agent_api_key" translate="label" type="password" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>AI Agent API Key</label>
+                </field>
+                <field id="stripe_api_key" translate="label" type="password" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Stripe API Key</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

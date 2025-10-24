@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+  Copyright © 2025 Ritu Sinha
+
+  This source code is licensed under the MIT license
+  that is bundled with this package in the file LICENSE.
+
+  You are free to use, modify, and distribute this software
+  in accordance with the terms of the MIT License.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="sinhar_aiagent_product_sync" instance="SinhaR\AiAgenticIntegration\Cron\SyncUpdatedProducts" method="execute">
+            <schedule>0 */2 * * *</schedule>
+        </job>
+    </group>
+</config>

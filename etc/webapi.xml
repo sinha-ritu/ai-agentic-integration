@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!--
+  Copyright © 2025 Ritu Sinha
+
+  This source code is licensed under the MIT license
+  that is bundled with this package in the file LICENSE.
+
+  You are free to use, modify, and distribute this software
+  in accordance with the terms of the MIT License.
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <!-- Product Discovery Endpoint -->
+    <route url="/V1/aiagent/products" method="GET">
+        <service class="SinhaR\AiAgenticIntegration\Api\ProductRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Magento_Catalog::products"/>
+        </resources>
+    </route>
+    <!-- Push Product To ACP Service Endpoint -->
+    <route url="/V1/aiagent/acp/push" method="POST">
+        <service class="SinhaR\AiAgenticIntegration\Api\ACPExporterInterface" method="push"/>
+        <resources>
+            <resource ref="Magento_Catalog::products"/>
+        </resources>
+    </route>
+    <!-- Checkout Endpoints -->
+    <route url="/V1/aiagent/checkout" method="POST">
+        <service class="SinhaR\AiAgenticIntegration\Api\CheckoutInterface" method="createSession"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/aiagent/checkout/:cartId" method="PUT">
+        <service class="SinhaR\AiAgenticIntegration\Api\CheckoutInterface" method="update"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/aiagent/checkout/:cartId/complete" method="POST">
+        <service class="SinhaR\AiAgenticIntegration\Api\CheckoutInterface" method="complete"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/aiagent/checkout/:cartId" method="DELETE">
+        <service class="SinhaR\AiAgenticIntegration\Api\CheckoutInterface" method="cancel"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/aiagent/webhook/" method="POST">
+        <service class="SinhaR\AiAgenticIntegration\Api\CheckoutInterface" method="handleWebhook"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

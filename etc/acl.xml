@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+  Copyright © 2025 Ritu Sinha
+
+  This source code is licensed under the MIT license
+  that is bundled with this package in the file LICENSE.
+
+  You are free to use, modify, and distribute this software
+  in accordance with the terms of the MIT License.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="SinhaR_AiAgenticIntegration::config" title="AI Agent Integration" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

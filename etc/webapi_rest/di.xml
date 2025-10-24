@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+  Copyright © 2025 Ritu Sinha
+
+  This source code is licensed under the MIT license
+  that is bundled with this package in the file LICENSE.
+
+  You are free to use, modify, and distribute this software
+  in accordance with the terms of the MIT License.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\App\FrontControllerInterface">
+        <plugin name="chatgpt_api_auth_validator"
+                type="SinhaR\AiAgenticIntegration\Plugin\AuthValidator"
+                sortOrder="10" />
+    </type>
+</config>
